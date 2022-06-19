@@ -1,0 +1,24 @@
+version: v1
+plugins:
+  - name: go
+    out: ../api/pb
+    opt:
+      - module=alticeusa.com/baseball/pb
+  - name: go-grpc
+    out: ../api/pb
+    opt:
+      - module=alticeusa.com/baseball/pb      
+      - require_unimplemented_servers=false
+#  - name: validate
+#    out: ../api/pb
+#    opt:
+#      - lang=go
+#      - module=alticeusa.com/baseball/pb
+#  - name: grpc-gateway
+#    out: ../api/pb
+#    opt:
+#     - module=alticeusa.com/baseball/pb
+  - name: gorm
+    out: ../api/pb
+    opt:
+      - module=alticeusa.com/baseball/pb   

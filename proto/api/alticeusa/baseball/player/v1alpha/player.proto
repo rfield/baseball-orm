@@ -1,0 +1,25 @@
+syntax = "proto3";
+package alticeusa.baseball.player.v1alpha;
+
+option go_package = "alticeusa.com/baseball/pb/player/v1alpha;v1alpha";
+ 
+import "gorm/gorm.proto";
+ 
+service PlayerService {
+   rpc GetPlayer(GetPlayerRequest) returns (GetPlayerResponse) {}
+}
+
+message Player {
+   option (gorm.opts).ormable = true;
+   string name = 1;
+   string position = 2;
+}
+
+
+message GetPlayerRequest {
+    string name = 1;
+}
+
+message GetPlayerResponse {
+    Player player = 1;
+}

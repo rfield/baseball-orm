@@ -1,0 +1,12 @@
+isyntax = "proto3";
+package alticeusa.baseball.team.v1alpha;
+
+option go_package = "alticeusa.com/baseball/pb/team/v1alpha;v1alpha";
+ 
+import "alticeusa/baseball/player/v1alpha/player.proto";
+//import "options/gorm.proto";
+ 
+message Team {
+   string name = 1;
+   repeated player.v1alpha.Player players = 2;
+}
